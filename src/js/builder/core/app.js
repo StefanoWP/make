@@ -269,19 +269,10 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 				iframeHead = $('head', iframeContent),
 				iframeBody = $('body', iframeContent);
 
-			var sectionId = id.split('-')[0];
-			var section = this.sections.get(sectionId)
-			var backgroundColor = "#ffffff";
-
-			if ('' !== section.get('background-color')) {
-				backgroundColor = section.get('background-color');
-			}
-
 			link = link || this.getFrameHeadLinks();
 
 			iframeHead.html(link);
 			iframeBody.html(switchEditors.wpautop(this.wrapShortcodes(content)));
-			iframeBody.css('background-color', backgroundColor);
 
 			// Firefox hack
 			// @link http://stackoverflow.com/a/24686535
