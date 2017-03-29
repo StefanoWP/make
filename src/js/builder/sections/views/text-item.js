@@ -30,10 +30,6 @@ var oneApp = oneApp || {};
 			var html = this.template(this.model);
 			this.setElement(html);
 
-			if (this.model.get('content')) {
-				$('.edit-content-link', this.$el).addClass('item-has-content');
-			}
-
 			return this;
 		},
 
@@ -81,13 +77,13 @@ var oneApp = oneApp || {};
 			var $iframe = this.$el.find('iframe');
 
 			var self = this;
-			
+
 			setTimeout(function() {
 				if (self.model.get('content')) {
 					$iframe.height($iframe.contents().height());
-					
+
 					var iframeContentHeight = $iframe.contents().innerHeight();
-					
+
 					if (iframeContentHeight > 500) {
 						iframeContentHeight = 500;
 					}
