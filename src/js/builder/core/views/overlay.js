@@ -22,6 +22,7 @@ var oneApp = oneApp || {};
 
 		open: function(view) {
 			this.caller = view;
+			this.model.clear();
 			this.$el.css('display', 'table');
 			$('body').addClass('modal-open');
 		},
