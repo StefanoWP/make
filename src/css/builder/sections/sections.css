@@ -429,6 +429,17 @@
 	box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 	background-color: #32373c;
 }
+.ttfmake-text-columns-5 .ttfmake-text-column:first-child .configure-item-dropdown,
+.ttfmake-text-columns-6 .ttfmake-text-column:first-child .configure-item-dropdown {
+	left: 0;
+	right: auto;
+}
+@media screen and (max-width: 1279px) {
+	.ttfmake-section-text .ttfmake-text-column:first-child .configure-item-dropdown {
+		left: 0;
+		right: auto;
+	}
+}
 .configure-item-dropdown:before {
 	position: absolute;
 	top: -8px;
@@ -440,6 +451,17 @@
 	border-left: 8px solid transparent;
 	border-right: 8px solid transparent;
 	border-bottom: 8px solid #32373c;
+}
+.ttfmake-text-columns-5 .ttfmake-text-column:first-child .configure-item-dropdown:before,
+.ttfmake-text-columns-6 .ttfmake-text-column:first-child .configure-item-dropdown:before {
+	right: auto;
+	left: 25%;
+}
+@media screen and (max-width: 1279px) {
+	.ttfmake-section-text .ttfmake-text-column:first-child .configure-item-dropdown:before {
+		right: auto;
+		left: 25%;
+	}
 }
 .ttfmake-banner-slide .configure-item-dropdown {
 	top: 40px;
