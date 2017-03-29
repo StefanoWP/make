@@ -122,6 +122,8 @@ var oneApp = oneApp || {};
 				}
 			}
 
+			$('.ttfmake-iframe-wrapper', this.$el).css('background-color', changeset['background-color'] || '');
+
 			this.model.set(changeset);
 		},
 

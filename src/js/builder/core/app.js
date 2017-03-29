@@ -264,15 +264,21 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 
 		initFrame: function(id, link) {
 			var content = $('#ttfmake-content-' + id).val(),
-				iframe = $('#ttfmake-iframe-' + id)[0],
+				$iframe = $('#ttfmake-iframe-' + id),
+				iframe = $iframe[0],
 				iframeContent = iframe.contentDocument ? iframe.contentDocument : iframe.contentWindow.document,
 				iframeHead = $('head', iframeContent),
-				iframeBody = $('body', iframeContent);
+				iframeBody = $('body', iframeContent),
+				$iframeWrapper = $iframe.parent();
 
 			link = link || this.getFrameHeadLinks();
 
 			iframeHead.html(link);
 			iframeBody.html(switchEditors.wpautop(this.wrapShortcodes(content)));
+
+			var sectionId = id.split('-')[0];
+			var section = this.sections.get(sectionId);
+			$iframeWrapper.css('background-color', section.get('background-color') || '');
 
 			// Firefox hack
 			// @link http://stackoverflow.com/a/24686535
